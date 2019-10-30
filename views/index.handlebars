@@ -1,0 +1,29 @@
+
+<img src="https://image.freepik.com/free-vector/eat-me-vector-illustration-funny-cartoon-burger_101969-2.jpg" alt="burger">
+<wrapper id="wrapper">
+<ol id="left">
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ol>
+
+<ol id="right">
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ol>
+</wrapper>
+<h2>Add a burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca"></label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <button type="submit" id="submit">Submit</button>
+</form>
